@@ -1,0 +1,42 @@
+# My Aliases
+
+#ls aliases
+alias ls='ls --color --group-directories-first'
+alias ll='ls -l --color --group-directories-first'
+alias l='ls --color --group-directories-first'
+alias la='ls -la --color --group-directories-first'
+alias lw=lbw
+alias lb=lbd
+
+#cd
+## get rid of command not found ##
+alias cd..='cd ..'
+ 
+## a quick way to get out of current directory ##
+alias ..='cd ..'
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../../'
+alias .6='cd ../../../../../../'
+
+## Colorize the grep command output for ease of use (good for log files)##
+# alias vim='$MYHOME/pkg/bin/vim'
+alias vi='vim -u $VRC_ARG'
+alias svi='sudo vi'
+alias edit='vim -u $VRC_ARG'
+alias sbc='source ~/.bashrc'
+alias cdh='cd $MYHOME'
+alias vrc='vim $VRC_ARG'
+alias vbc='vim ~/.bashrc'
+eval $(dircolors -b ~/.dircolors)
+
+# alias tls='tmux ls'
+alias tls="tmux ls -F '#{line} #{session_name} #{?session_attached, windows[#{session_windows}] (attached),}' "
+alias ta='tma $1'
+alias tn='tmux new -d -s $1'
+alias myip='hostname -i'
+
+if [ -f ~/.aliases_work ]; then 
+	source ~/.aliases_work 
+fi 
